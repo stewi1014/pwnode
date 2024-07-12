@@ -1,4 +1,5 @@
 #include <gtk/gtk.h>
+#include <pipewire/pipewire.h>
 #include <stdio.h>
 
 #include "pwnode.h"
@@ -8,6 +9,10 @@ main (int argc, char *argv[])
 {
   GtkApplication *app;
   int status;
+
+  printf ("Compiled libpipewire: %s\n"
+          "Linked libpipewire: %s\n",
+          pw_get_headers_version (), pw_get_library_version ());
 
   app = gtk_application_new ("com.github.stewi1014.pwnode", 0);
   g_signal_connect (app, "activate", G_CALLBACK (activate), NULL);

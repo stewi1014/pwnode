@@ -9,6 +9,7 @@ project(
 gnome = import('gnome')
 
 gtk_dep = dependency('gtk4', version: '>=4.14')
+pipewire_dep = dependency('libpipewire-0.3')
 
 sources = [
     'src' / 'pwnode.c',
@@ -18,7 +19,7 @@ sources = [
 executable(
     meson.project_name(),
     sources: sources,
-    dependencies: [gtk_dep],
+    dependencies: [gtk_dep, pipewire_dep],
     install: true,
 )
 

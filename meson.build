@@ -12,6 +12,7 @@ gtk_dep = dependency('gtk4', version: '>=4.14')
 pipewire_dep = dependency('libpipewire-0.3')
 
 sources = [
+    'src' / 'main.c',
     'src' / 'pwnode.c',
     gnome.compile_resources('resources', 'resources/resources.xml', source_dir: 'resources'),
 ]
